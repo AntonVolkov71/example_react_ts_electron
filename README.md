@@ -1,5 +1,6 @@
 ## Стартовый шаблон
 
+- Nodejs 22.8.0
 - React
 - React Route
 - Typescript
