@@ -1,4 +1,4 @@
-// src/components/About.tsx
+// src/views/About.tsx
 import React from 'react';
 
 function About() {

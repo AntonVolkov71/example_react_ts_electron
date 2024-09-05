@@ -1,5 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const dotenv = require('dotenv').config({ path: './.env' });
 
 module.exports = {
   entry: './src/index.tsx',
@@ -9,6 +11,9 @@ module.exports = {
     publicPath: './'
   },
   resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),  // Добавляем алиас для 'src'
+    },
     extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
   module: {
@@ -32,7 +37,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
       inject:'body'
-    })
+    }),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(dotenv.parsed)  // Подключение переменных окружения
+    }),
   ],
   devServer: {
     static: path.join(__dirname, 'dist'),

@@ -1,4 +1,4 @@
-// src/components/NotFound.tsx
+// src/views/NotFound.tsx
 import React from 'react';
 
 function NotFound() {

@@ -1,4 +1,4 @@
-// src/components/Contact.tsx
+// src/views/Contact.tsx
 import React from 'react';
 
 function Contact() {

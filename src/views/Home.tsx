@@ -1,4 +1,4 @@
-// src/components/Home.tsx
+// src/views/Home.tsx
 import React from 'react';
 
 function Home() {
