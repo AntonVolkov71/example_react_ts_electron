@@ -1,0 +1,21 @@
+# Build directories
+/dist
+/build
+/out
+
+# TypeScript
+*.tsbuildinfo
+
+# Logs
+*.log
+
+# Dependency directories
+/node_modules
+
+# IDE-specific
+.vscode/
+.idea/
+
+# ESLint and Prettier
+.eslintcache
+.prettierignore

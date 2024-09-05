@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true, // Проверяет на null/undefined
+    "noImplicitAny": true, // Запрещает неявное использование any
+    "noImplicitThis": true, // Запрещает использование this без типа
+    "alwaysStrict": true, // Включает строгий режим ECMAScript для каждого файла
+    "strictFunctionTypes": true, // Строгая проверка типов функций
+    "strictBindCallApply": true, // Строгая проверка методов bind, call и apply
+    "noFallthroughCasesInSwitch": true, // Запрещает переход к следующему case в switch
+    "noImplicitReturns": true, // Запрещает функции без явного возвращаемого значения
+    "noUnusedLocals": true, // Сообщает об объявленных, но неиспользуемых локальных переменных
+    "noUnusedParameters": true, // Сообщает об объявленных, но неиспользуемых параметрах функции
+    "noImplicitOverride": true, // Требует явного использования override при переопределении методов
+    "exactOptionalPropertyTypes": true // Требует точного соответствия типов для опциональных свойств
+  }
+}
