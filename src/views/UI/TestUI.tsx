@@ -6,7 +6,5 @@ interface ComponentsProps {
 }
 
 export const TestUI: FC<ComponentsProps> = ({ width }) => {
-  return (
-    <div style={{ width }}>Test UI. Props width {width}</div>
-  );
+  return <div style={{ width }}>Test UI. Props width {width}</div>;
 };

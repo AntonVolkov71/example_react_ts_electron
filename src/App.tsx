@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
-import { Button } from 'react-bootstrap';  // Импортируем компонент Button из React Bootstrap
+import { Button } from 'react-bootstrap'; // Импортируем компонент Button из React Bootstrap
 import Home from '@/views/Home';
 import About from '@/views/About';
 import Contact from '@/views/Contact';
@@ -12,7 +12,7 @@ import { TestUI } from '@/views/UI/TestUI'; // Импортируем Bootstrap 
 
 function App() {
   const { testActions } = useActions();
-  const { value } = useTypedSelector(state => state.test);
+  const { value } = useTypedSelector((state) => state.test);
   // Создаем стейт для двух чекбоксов
   const [checkboxState, setCheckboxState] = useState({
     checkbox1: false,
@@ -24,7 +24,7 @@ function App() {
   // Обработчик изменения состояния чекбоксов
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, checked } = e.target;
-    setCheckboxState(prevState => ({
+    setCheckboxState((prevState) => ({
       ...prevState,
       [id]: checked,
     }));
@@ -32,7 +32,7 @@ function App() {
 
   // Обработчик нажатия кнопки
   const handleButtonClick = () => {
-    const text = 'hello ' + (new Date()).toISOString();
+    const text = 'hello ' + new Date().toISOString();
     testActions(text);
   };
 
@@ -40,42 +40,54 @@ function App() {
     <Router>
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="#">React Bootstrap</a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <a className="navbar-brand" href="#">
+            React Bootstrap
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="#/">Home</a>
+                <a className="nav-link" href="#/">
+                  Home
+                </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#/about">About</a>
+                <a className="nav-link" href="#/about">
+                  About
+                </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#/contact">Contact</a>
+                <a className="nav-link" href="#/contact">
+                  Contact
+                </a>
               </li>
             </ul>
           </div>
         </nav>
 
-        <p>
-          Value click {value}
-        </p>
+        <p>Value click {value}</p>
         {/* Кастомизированная кнопка с обработчиком клика */}
         <div className="mt-4">
-          <Button variant="primary" style={{ backgroundColor: '#007bff', borderColor: '#0056b3' }}
-                  onClick={handleButtonClick}>
+          <Button
+            variant="primary"
+            style={{ backgroundColor: '#007bff', borderColor: '#0056b3' }}
+            onClick={handleButtonClick}
+          >
             Click Me
           </Button>
         </div>
 
-
-        <TestUI
-          width={'120px'}
-
-        />
+        <TestUI width={'120px'} />
         {/* Flexbox для чекбоксов */}
         <div className="d-flex flex-row mt-3">
           <div className="form-check me-3">
@@ -106,8 +118,12 @@ function App() {
 
         {/* Отображение состояния чекбоксов */}
         <div className="mt-3">
-          <p>Checkbox 1 is {checkboxState.checkbox1 ? 'checked' : 'unchecked'}</p>
-          <p>Checkbox 2 is {checkboxState.checkbox2 ? 'checked' : 'unchecked'}</p>
+          <p>
+            Checkbox 1 is {checkboxState.checkbox1 ? 'checked' : 'unchecked'}
+          </p>
+          <p>
+            Checkbox 2 is {checkboxState.checkbox2 ? 'checked' : 'unchecked'}
+          </p>
         </div>
 
         <Routes>

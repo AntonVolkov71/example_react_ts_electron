@@ -8,38 +8,38 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: './'
+    publicPath: './',
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),  // Добавляем алиас для 'src'
+      '@': path.resolve(__dirname, 'src'), // Добавляем алиас для 'src'
     },
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader']
-      }
-    ]
+        use: ['file-loader'],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      inject:'body'
+      inject: 'body',
     }),
     new webpack.DefinePlugin({
-      'process.env': JSON.stringify(dotenv.parsed)  // Подключение переменных окружения
+      'process.env': JSON.stringify(dotenv.parsed), // Подключение переменных окружения
     }),
   ],
   devServer: {
@@ -51,5 +51,5 @@ module.exports = {
     devMiddleware: {
       publicPath: '/',
     },
-  }
+  },
 };

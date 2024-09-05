@@ -13,6 +13,10 @@
     "electron:build": "webpack --mode production && electron-builder",
     "electron:pack": "electron-builder --dir",
     "electron:dist": "electron-builder",
+    "---pm2---": "-------",
+    "start:prod:pm2:windows": "pm2 start pm2/ecosystem.config.js",
+    "start:prod:pm2": "pm2 start pm2/ecosystem.config.js && pm2 startup",
+    "stop:prod:pm2": "pm2 stop pm2/ecosystem.config.js && pm2 delete pm2/ecosystem.config.js && pm2 save --force",
     "---lint---": "-------",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
@@ -26,6 +30,7 @@
     "bootstrap": "^5.3.3",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "pm2": "^5.4.2",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.3.1",
